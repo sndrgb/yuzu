@@ -29,6 +29,7 @@
     "bundle": "lerna run bundle",
     "docs": "node ./scripts/doc.js",
     "test": "karma start karma.conf.js --single-run",
+    "test:saucelab": "karma start karma-sauce.conf.js --single-run",
     "dev": "karma start karma.conf.js",
     "demo": "rollup -c ./examples/bundled/rollup.config.js -w"
   },
@@ -48,6 +49,7 @@
     "karma-chrome-launcher": "~2.2.0",
     "karma-html2js-preprocessor": "^1.1.0",
     "karma-jasmine": "~1.1.2",
+    "karma-sauce-launcher": "^1.2.0",
     "karma-typescript": "~3.0.13",
     "karma-typescript-es6-transform": "~1.0.4",
     "lerna": "^3.1.4",
