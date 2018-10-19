@@ -53,6 +53,7 @@ const LISTENER_REGEXP = /^([^ ]+)(?: (.+))?$/;
  */
 export class Component extends Events {
   public static root?: string;
+  public static componentName?: string;
 
   /**
    * ```js

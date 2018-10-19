@@ -254,7 +254,7 @@ export const Loadable = (opts: ILoadableOptions) => {
     }
   };
 
-  Object.defineProperty(LoadableComponent, 'name', {
+  Object.defineProperty(LoadableComponent, 'componentName', {
     value: `Loadable${Child.name || 'Component'}`,
   });
 

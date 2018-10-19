@@ -25,8 +25,8 @@ describe('`Loadable`', () => {
       );
     });
 
-    it('sets the component name', () => {
-      expect(LoadableComponent.name).toBe('LoadableChild');
+    it('sets the component componentName property', () => {
+      expect(LoadableComponent.componentName).toBe('LoadableChild');
     });
 
     it('extends generated component defaults with passed-in options', () => {
