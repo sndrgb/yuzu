@@ -2,36 +2,23 @@ import { Component, mount } from '@packages/yuzu/src';
 import { createContext } from '@packages/application/src';
 import { List } from './list';
 import { Counter } from './counter';
-import { createStore } from './store';
 import { connect } from './connect';
-
-const addItem = ({ items }) => ({
-  items: [...items, items.length],
-});
-
-const setTotal = ({ items }) => ({
-  total: items.length,
-});
+import { actions, reducer } from './store';
+declare const Redux: any;
 
 const ConnectedList = connect(
   ({ items }) => ({ items }),
   (dispatch) => ({
-    onClick: async () => {
-      await dispatch(addItem);
-      dispatch(setTotal);
-    },
+    onClick: () => dispatch(actions.addItem()),
   }),
 )(List);
 
 const ConnectedCounter = connect(
-  ({ total }) => ({ count: total }),
+  ({ items }) => ({ count: items.length }),
   null,
 )(Counter);
 
-const $store = createStore({
-  items: [],
-  total: 0,
-});
+const $store = Redux.createStore(reducer);
 
 const context = createContext({ $store });
 
